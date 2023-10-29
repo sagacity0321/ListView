@@ -1,4 +1,4 @@
-package com.example.listview.adapters
+package com.example.listview.adapters가
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -34,7 +34,7 @@ class StudentAdapter(
 
         txtName.text = stdData.name
         txtPhoneNum.text = stdData.phoneNum
-        txtAge.text = "(${2023 - stdData.birthYear + 1}세)"
+        txtAge.text = "(${stdData.getKoreanAge(2023)}세)"
 
         return row
     }

@@ -3,7 +3,7 @@ package com.example.listview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.example.listview.adapters.StudentAdapter
+import com.example.listview.adapters가.StudentAdapter
 import com.example.listview.databinding.ActivityMainBinding
 import com.example.listview.datas.StudentData
 
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("김재환", 1993, "010-5555-6666"))
         mStudentList.add(StudentData("박수정", 1994, "010-1111-2222"))
         mStudentList.add(StudentData("신용성", 1988, "010-1234-5678"))
+        mStudentList.add(StudentData("신용성", 1988))
 
         // Adapter 객체 생성
         mStdAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
