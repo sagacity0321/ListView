@@ -2,6 +2,7 @@ package com.example.listview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.listview.adapters가.StudentAdapter
 import com.example.listview.databinding.ActivityMainBinding
@@ -27,6 +28,14 @@ class MainActivity : AppCompatActivity() {
         mStdAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
         // Adapter를 리스트뷰와 연결
         binding.studentListView.adapter = mStdAdapter
+
+        // 학생 한 명 클릭 -> "이름: 연락처" 로 토스트 출력
+        binding.studentListView.setOnItemClickListener{ adapterView, view, position, l ->
+            // 함수의 세 번째 (position) 파라미터: 몇 번 줄이 눌렸는지 알려줌
+            // mStudentList 중 클릭된 줄에 맞는 학생 데이터 추출
+            val clickedStd = mStudentList[position]
+            Toast.makeText(this, "${clickedStd.name}: ${clickedStd.phoneNum}", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

@@ -17,7 +17,9 @@ class StudentAdapter(
     val inf = LayoutInflater.from(mContext) // LayoutInflater: XML -> 객체화
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var tempRow = convertView // 재활용성: convertView
+        var tempRow = convertView // 재활용성: null 가능성 대비
+
+        // tempRow가 null인가? -> null이면 inflate를 이용해서 채워주자
         if (tempRow == null) {
             tempRow = inf.inflate(R.layout.student_list_item, null)
         }
