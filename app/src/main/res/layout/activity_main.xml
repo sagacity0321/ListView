@@ -9,6 +9,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/studentListView"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
 </layout>
